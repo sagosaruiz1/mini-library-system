@@ -120,7 +120,7 @@ def add_student(conn, student_id, name, course, year_level):
 def view_books(conn):
     try:
         cur = conn.cursor()
-        cur.execute("SELECT * FROM Books ORDER BY title")
+        cur.execute("SELECT * FROM Books ORDER BY book_id")
         rows = cur.fetchall()
         print("\n-------- BOOKS LIST --------")
         for r in rows:
@@ -296,4 +296,5 @@ def main():
     conn.close()
 
 if __name__ == "__main__":
+
     main()
